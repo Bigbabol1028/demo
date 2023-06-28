@@ -111,4 +111,6 @@ const radio3 = ref('Total')
     margin-right: 20px;
     margin-top: 15px;
 }
+
+
 </style>
