@@ -6,77 +6,83 @@
             <button class="tabnamebtn1">添加</button>
         </div>
         <div class="tabback">
-            <table class="admin-tab" border="1" cellspacing="0">
-                <tr height="60px">
-                    <td width="60px" align="center">序号</td>
-                    <td width="200px" align="center">名称</td>
-                    <td width="420px" align="center">地址</td>
-                    <td width="120px" align="center">验证状态</td>
-                    <td width="260px" align="center">云钱包账号</td>
-                    <td width="140px" align="center">已应用的权限数量</td>
-                </tr>
-                <tr height="37px">
-                    <td align="center">1</td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-                <tr height="37px">
-                    <td align="center">2</td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-                <tr height="37px">
-                    <td align="center">3</td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-            </table>
+            <el-table :data="tableData1" border>
+                <el-table-column prop="number" label="序号" width="130px"/>
+                <el-table-column prop="name" label="名称" width="200px"/>
+                <el-table-column prop="address" label="地址" width="450px"/>
+                <el-table-column prop="state" label="验证状态" width="200px"/>
+                <el-table-column prop="account" label="云钱包账号" width="300px"/>
+                <el-table-column prop="quantity" label="已应用的权限数量" width="200px"/>
+            </el-table>
         </div>
         <br>
         <h1>合约权限</h1>
         <div class="tabback">
-            <table class="admin-tab" border="1" cellspacing="0">
-                <tr height="60px">
-                    <td width="470px" align="center">合约</td>
-                    <td width="140px" align="center">权限</td>
-                    <td width="260px" align="center">权限地址</td>
-                    <td width="190px" align="center">设置时间</td>
-                    <td width="140px" align="center">操作</td>
-                </tr>
-                <tr height="37px">
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-                <tr height="37px">
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-                <tr height="37px">
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                    <td align="center"></td>
-                </tr>
-            </table>
+            <el-table :data="tableData2" border style="width: 100%">
+                <el-table-column prop="contract" label="合约" width="574px"/>
+                <el-table-column prop="permissions" label="权限" width="162px"/>
+                <el-table-column prop="address" label="权限地址" width="296px"/>
+                <el-table-column prop="settime" label="设置时间" width="262px"/>
+                <el-table-column prop="operate" label="操作" width="154px"/>
+            </el-table>
         </div>
     </div>
 </template>
+
+<script lang="ts" setup>
+
+const tableData1 = [
+    {
+        number: '1',
+        name: '[项目管理员账户]',
+        address: '0x22704345C8649CA4b9f970c616cE7fb5fB1Fdab9',
+        state: '已验证',
+        account: '234567@abc.com',
+        quantity: '12'
+    },
+    {
+        number: '2',
+        name: 'abc',
+        address: '0xdFb630379ccB11114c31D9e618eB6D1275eDDBCf',
+        state: '已验证',
+        account: '234567@abc.com',
+        quantity: '0'
+    },
+    {
+        number: '3',
+        name: '-',
+        address: '0x40C7214f2d1312A492DBBc77Bb1D851431ad1678',
+        state: '未验证',
+        account: '-',
+        quantity: '2'
+    }
+]
+
+const tableData2 = [
+    {
+        contract: '[Metaverse合约] (0x7Db439e5862931c53eB3A788F07455373eCAF6EB)',
+        permissions: 'owner',
+        address: '[项目管理员账户] (0x2270...dab9)',
+        settime: '123 days ago',
+        operate: '修改',
+    },
+    {
+        contract: '[Metaverse合约] (0x7Db439e5862931c53eB3A788F07455373eCAF6EB)',
+        permissions: 'admin',
+        address: 'abc (0xdFb6...DBCf)',
+        settime: '12 hours ago',
+        operate: '修改',
+    },
+    {
+        contract: 'GCOIN (0x1baf38fc8501546fB3598F0530E8C2d2dcC4EfD0)',
+        permissions: 'owner',
+        address: '[项目管理员账户] (0x2270...dab9)',
+        settime: '30 days ago',
+        operate: '修改',
+    }
+]
+
+</script>
 
 
 <style>
