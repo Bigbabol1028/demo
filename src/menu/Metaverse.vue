@@ -71,12 +71,12 @@ const data = {
     }
 };
 
-let input9 = ref("")
-let input13 = ref("")
+let input9 = ref("");
+let input13 = ref("");
 input9.value = data.project_info.metaverse_contract
 input13.value = data.project_info.world_contract
 
-const tableData3 = [
+const tableData3 = [ //从缓存中读取
     {
         name: 'GCOIN',
         contract: '0x7Db439e5862931c53eB3A788F07455373eCAF6EB',
