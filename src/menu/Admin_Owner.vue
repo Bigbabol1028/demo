@@ -65,25 +65,28 @@ const data = [
 const tableData1 = ref([{}]);
 
 
-tableData1.value.push(
-    {
-        number: '1',
-        name: '[项目管理员账户]',
-        address: '0x22704345C8649CA4b9f970c616cE7fb5fB1Fdab9',
-        state_text: '已验证',
-        account: '234567@abc.com',
-        quantity: '12'
-    }    
-)
-/*
-for (let i = 0; i < tableData1.length; i++) {
-    if (tableData1[i].state == true)
-        tableData1[i].state_text = "已验证";
+
+
+for (let i = 0; i < data.length; i++) {
+    let txt = '';
+    if (data[i].state)
+        txt = '已验证';
     else
-        tableData1[i].state_text = "未验证";
+        txt = '未验证';
+    tableData1.value.push(
+        {
+            number: data[i].number,
+            name: data[i].name,
+            address: data[i].address,
+            //        state_text: data[i].state ? '已验证' : '未验证',
+            state_text: txt,
+            account: data[i].account,
+            quantity: data[i].quantity
+        }
+    );
 
 }
-*/
+
 const tableData2 = [
     {
         contract: '[Metaverse合约] (0x7Db439e5862931c53eB3A788F07455373eCAF6EB)',
