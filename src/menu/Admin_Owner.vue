@@ -63,19 +63,19 @@ const data = [
     }
 ]
 const tableData1 = ref([{}]);
-/*
+
+
 tableData1.value.push(
     {
         number: '1',
         name: '[项目管理员账户]',
         address: '0x22704345C8649CA4b9f970c616cE7fb5fB1Fdab9',
-        state: true,
-        //state_text: '',
+        state_text: '已验证',
         account: '234567@abc.com',
         quantity: '12'
     }    
 )
-
+/*
 for (let i = 0; i < tableData1.length; i++) {
     if (tableData1[i].state == true)
         tableData1[i].state_text = "已验证";
