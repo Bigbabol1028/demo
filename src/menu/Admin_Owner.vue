@@ -31,15 +31,15 @@
 
 <script lang="ts" setup>
 import { tableV2GridProps } from 'element-plus/es/components/table-v2/src/grid';
+import { ref } from 'vue';
 
-
-const tableData1 = [
+const data = [
     {
         number: '1',
         name: '[项目管理员账户]',
         address: '0x22704345C8649CA4b9f970c616cE7fb5fB1Fdab9',
         state: true,
-        state_text: '',
+        //state_text: '',
         account: '234567@abc.com',
         quantity: '12'
     },
@@ -48,7 +48,7 @@ const tableData1 = [
         name: 'abc',
         address: '0xdFb630379ccB11114c31D9e618eB6D1275eDDBCf',
         state: true,
-        state_text: '',
+        //state_text: '',
         account: '234567@abc.com',
         quantity: '0'
     },
@@ -57,21 +57,33 @@ const tableData1 = [
         name: '-',
         address: '0x40C7214f2d1312A492DBBc77Bb1D851431ad1678',
         state: false,
-        state_text: '',
+        //state_text: '',
         account: '-',
         quantity: '2'
     }
 ]
-let i = 0
+const tableData1 = ref([{}]);
+/*
+tableData1.value.push(
+    {
+        number: '1',
+        name: '[项目管理员账户]',
+        address: '0x22704345C8649CA4b9f970c616cE7fb5fB1Fdab9',
+        state: true,
+        //state_text: '',
+        account: '234567@abc.com',
+        quantity: '12'
+    }    
+)
 
-for (i = 0; i < tableData1.length; i++) {
+for (let i = 0; i < tableData1.length; i++) {
     if (tableData1[i].state == true)
         tableData1[i].state_text = "已验证";
     else
         tableData1[i].state_text = "未验证";
 
 }
-
+*/
 const tableData2 = [
     {
         contract: '[Metaverse合约] (0x7Db439e5862931c53eB3A788F07455373eCAF6EB)',
