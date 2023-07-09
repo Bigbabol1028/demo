@@ -11,6 +11,7 @@
     flex: 1; 
     overflow-y: auto;
     height: 100%;
+    margin-left: 30px;
 }
 
 </style>

@@ -20,7 +20,8 @@
 
 <style>
 .aside-box {
-  width: 240px;
+  width: 210px;
+  margin-left: 30px;
 }
 
 .selector {
